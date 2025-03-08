@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int splitNum(int num) {
+        string nums = to_string(num);
+        sort(nums.begin(), nums.end());
+        string n1 = "", n2 = "";
+
+        for(int i = 0; i < nums.length(); i++){
+            if (i % 2 == 0){
+                n1 += nums[i];
+            } else {
+                n2 += nums[i];
+            }
+        }
+        return stoi(n1) + stoi(n2);
+    }
+};
